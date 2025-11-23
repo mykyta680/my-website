@@ -6,8 +6,8 @@
 
   // ========= НАСТРОЙКИ TELEGRAM =========
   // ⚠️ ПІДСТАВ СЮДИ СВІЙ НОВИЙ ТОКЕН ТА CHAT_ID
-  const TELEGRAM_BOT_TOKEN = "токен_твого_бота_тут";
-  const TELEGRAM_CHAT_ID = "-1003499981585"; // ID групи або приватного чату
+  const TELEGRAM_BOT_TOKEN = "8580437525:AAGJC0I6vKuTx1JhNRVX_d5Zu_8jjv8x6kw";
+  const TELEGRAM_CHAT_ID = "-1003280524769"; // ID групи або приватного чату
   const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
   // ========= ФІКСОВАНИЙ ХЕДЕР =========
