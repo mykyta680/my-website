@@ -191,6 +191,15 @@ section:nth-of-type(6) {
   color: #e5e7eb;
 }
 
+/* Active link (scroll spy) */
+.nav-links a.is-active {
+  color: #e5e7eb;
+}
+
+.nav-links a.is-active::after {
+  width: 100%;
+}
+
 /* Mobile toggle */
 
 .nav-toggle {

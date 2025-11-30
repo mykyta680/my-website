@@ -59,6 +59,86 @@
     });
   });
 
+  // ========= АКТИВНИЙ ПУНКТ МЕНЮ ПРИ СКРОЛІ =========
+  const menuLinks = document.querySelectorAll(".nav-links a[href^='#']");
+
+  // id секції -> лінк меню
+  const linkById = new Map();
+  menuLinks.forEach((a) => {
+    const href = a.getAttribute("href");
+    if (!href || href === "#" || href === "#0") return;
+
+    const id = href.slice(1);
+    const section = document.getElementById(id);
+    if (section) linkById.set(id, a);
+  });
+
+  let sections = Array.from(linkById.keys())
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  function setActiveLink(activeId) {
+    menuLinks.forEach((a) => {
+      a.classList.remove("is-active");
+      a.removeAttribute("aria-current");
+    });
+
+    if (!activeId) return;
+
+    const activeLink = linkById.get(activeId);
+    if (activeLink) {
+      activeLink.classList.add("is-active");
+      activeLink.setAttribute("aria-current", "page");
+    }
+  }
+
+  function updateActiveOnScroll() {
+    const hh = header ? header.offsetHeight : headerHeight;
+    const y = window.scrollY + hh + 24; // 24px — “запас” під хедером
+
+    // Якщо доскролили до самого низу — активуємо останню секцію
+    const nearBottom =
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    if (nearBottom && sections.length) {
+      setActiveLink(sections[sections.length - 1].id);
+      return;
+    }
+
+    let currentId = null;
+    for (const section of sections) {
+      if (section.offsetTop <= y) currentId = section.id;
+      else break;
+    }
+
+    // якщо ще вище першої секції з меню — нічого не підсвічуємо
+    if (sections[0] && y < sections[0].offsetTop) currentId = null;
+
+    setActiveLink(currentId);
+  }
+
+  let raf = 0;
+  function onScrollOrResize() {
+    if (raf) return;
+    raf = requestAnimationFrame(() => {
+      raf = 0;
+
+      // на resize/переломах може змінитися висота/позиції
+      sections = Array.from(linkById.keys())
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+
+      updateActiveOnScroll();
+    });
+  }
+
+  window.addEventListener("scroll", onScrollOrResize, { passive: true });
+  window.addEventListener("resize", onScrollOrResize);
+
+  // первинне підсвічування
+  updateActiveOnScroll();
+
+
+
   // ========= ВІДПРАВКА ФОРМИ У TELEGRAM =========
   const form = document.getElementById("contact-form");
   const statusEl = document.getElementById("form-status");
