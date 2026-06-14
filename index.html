@@ -6,17 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Portfolio of Mykyta Yakovenko – junior SMM marketer. Social media management, content creation, and basic analytics for small brands and personal projects."
+    content="Portfolio of Mykyta Yakovenko: AI music production, YouTube automation, responsive web development, Telegram bot development, and digital content systems."
   />
-
-  <!-- External styles -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <svg aria-hidden="true" class="icon-sprite">
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+      <path d="M5 12h14"></path>
+      <path d="m13 6 6 6-6 6"></path>
+    </symbol>
+    <symbol id="icon-bot" viewBox="0 0 24 24">
+      <path d="M12 8V4"></path>
+      <path d="M8 4h8"></path>
+      <rect x="5" y="8" width="14" height="11" rx="3"></rect>
+      <path d="M9 13h.01"></path>
+      <path d="M15 13h.01"></path>
+      <path d="M10 17h4"></path>
+    </symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24">
+      <path d="m8 9-4 3 4 3"></path>
+      <path d="m16 9 4 3-4 3"></path>
+      <path d="m14 5-4 14"></path>
+    </symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24">
+      <path d="M12 3v12"></path>
+      <path d="m7 10 5 5 5-5"></path>
+      <path d="M5 21h14"></path>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+      <path d="m3 7 9 6 9-6"></path>
+    </symbol>
+    <symbol id="icon-music" viewBox="0 0 24 24">
+      <path d="M9 18V5l11-2v13"></path>
+      <circle cx="6" cy="18" r="3"></circle>
+      <circle cx="17" cy="16" r="3"></circle>
+    </symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="m10 8 6 4-6 4V8Z"></path>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="m5 12 4 4L19 6"></path>
+    </symbol>
+  </svg>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#hero" class="logo">
-        MY<span>•SMM</span>
+      <a href="#hero" class="logo" data-scroll>
+        <span class="logo-mark">MY</span>
+        <span class="logo-text">Portfolio</span>
       </a>
 
       <nav class="site-nav" aria-label="Main navigation">
@@ -29,472 +69,531 @@
           <li><a href="#about" data-scroll>About</a></li>
           <li><a href="#services" data-scroll>Services</a></li>
           <li><a href="#portfolio" data-scroll>Portfolio</a></li>
-          <li><a href="#testimonials" data-scroll>Testimonials</a></li>
+          <li><a href="#process" data-scroll>Process</a></li>
           <li><a href="#contact" data-scroll>Contact</a></li>
         </ul>
       </nav>
+
+      <a class="header-cta" href="My_CV_Mykyta_Yakovenko.pdf" target="_blank" rel="noreferrer">
+        CV
+      </a>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
     <section id="hero" class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Junior SMM · Student · Based in Germany</p>
-          <h1>
-            Hi, I’m <span>Mykyta Yakovenko</span> — junior social media marketer.
-          </h1>
-          <p class="hero-subtitle">
-            I help small brands, local projects and personal accounts look
-            modern and professional on social media with consistent content,
-            clear messaging and simple analytics.
+      <div class="container hero-layout">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">Digital portfolio</p>
+          <h1>Mykyta Yakovenko</h1>
+          <p class="hero-lede">
+            AI music production, YouTube automation, modern websites, and Telegram bots
+            built with clean execution and a business-focused mindset.
           </p>
 
           <div class="hero-actions">
-            <a href="#portfolio" class="btn btn-primary" data-scroll>View my work</a>
-            <a href="#contact" class="btn btn-ghost" data-scroll>Contact me</a>
+            <a href="#portfolio" class="btn btn-primary" data-scroll>
+              View projects
+              <svg class="icon"><use href="#icon-arrow-right"></use></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary" data-scroll>Start a project</a>
           </div>
 
-          <ul class="hero-meta">
-            <li><strong>Platforms:</strong> Instagram, TikTok</li>
-            <li><strong>Focus:</strong> content plans, posts & stories, basic analytics</li>
-          </ul>
+          <div class="hero-proof" aria-label="Portfolio highlights">
+            <div>
+              <strong>4</strong>
+              <span>Project areas</span>
+            </div>
+            <div>
+              <strong>Clean</strong>
+              <span>Client-ready delivery</span>
+            </div>
+            <div>
+              <strong>Responsive</strong>
+              <span>Mobile-first layouts</span>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-card">
-          <div class="availability-tag">
-            Available for freelance projects
+        <div class="hero-workspace" aria-label="Preview of Mykyta's digital project work" data-reveal>
+          <div class="workspace-topbar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>Project command center</p>
           </div>
 
-          <div class="hero-card-inner">
-            <p class="hero-card-title">Social media that doesn’t feel random.</p>
-            <p class="hero-card-text">
-              Need help with a school project, personal brand or local business?
-              I create simple content plans, write captions and design visuals so
-              your account feels consistent — not chaotic.
-            </p>
-            <ul class="hero-card-list">
-              <li>Content calendar for 2–4 weeks</li>
-              <li>Caption & story ideas for each post</li>
-              <li>Basic Canva / Figma visuals to match your style</li>
-            </ul>
+          <div class="workspace-grid">
+            <div class="workspace-panel panel-wide">
+              <div class="panel-title">
+                <svg class="icon"><use href="#icon-music"></use></svg>
+                AI music track
+              </div>
+              <div class="waveform">
+                <span style="--h: 42%"></span>
+                <span style="--h: 74%"></span>
+                <span style="--h: 58%"></span>
+                <span style="--h: 88%"></span>
+                <span style="--h: 48%"></span>
+                <span style="--h: 68%"></span>
+                <span style="--h: 36%"></span>
+                <span style="--h: 78%"></span>
+                <span style="--h: 52%"></span>
+                <span style="--h: 64%"></span>
+              </div>
+            </div>
+
+            <div class="workspace-panel">
+              <div class="panel-title">
+                <svg class="icon"><use href="#icon-play"></use></svg>
+                YouTube
+              </div>
+              <div class="mini-video">
+                <div></div>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="workspace-panel">
+              <div class="panel-title">
+                <svg class="icon"><use href="#icon-bot"></use></svg>
+                Bot flow
+              </div>
+              <div class="bot-flow">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="workspace-panel panel-wide">
+              <div class="panel-title">
+                <svg class="icon"><use href="#icon-code"></use></svg>
+                Web preview
+              </div>
+              <div class="browser-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="container">
-        <div class="section-header">
-          <h2>About me</h2>
-          <p>A short intro to who I am and how I work.</p>
+    <section id="about" class="section">
+      <div class="container two-column">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">About</p>
+          <h2>Practical digital work with a clear outcome.</h2>
         </div>
 
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              I’m a high school student currently living in Germany. I’ve
-              completed social media marketing (SMM) courses and use what I’ve
-              learned to help projects build a clear, modern presence online.
-            </p>
-            <p>
-              I enjoy working on realistic, small-scale projects: local
-              businesses, student initiatives, personal brands. My focus is on
-              practical steps — planning content, keeping a consistent visual
-              style and tracking simple metrics like reach and engagement to see
-              what actually works.
-            </p>
-          </div>
-
-          <aside class="about-skills">
-            <h3>Key skills</h3>
-            <ul class="skill-list">
-              <li>Content planning for social media (2–4 week calendars)</li>
-              <li>Basic Canva / Figma skills for posts & stories</li>
-              <li>Writing captions and story scripts</li>
-              <li>Basic analytics: reach, engagement rate (ER), CTR</li>
-              <li>Instagram & TikTok content formats</li>
-              <li>Facebook posting & simple community support</li>
-            </ul>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="services">
-      <div class="container">
-        <div class="section-header">
-          <h2>What I can do</h2>
+        <div class="about-content" data-reveal>
           <p>
-            Services I offer as a junior SMM marketer. Perfect for small
-            projects and first test campaigns.
+            I create polished digital assets and automation systems for creators,
+            small businesses, and personal brands. My work combines content production,
+            simple strategy, technical setup, and clean presentation.
+          </p>
+          <p>
+            The goal is straightforward: make projects look professional, work reliably,
+            and feel easy for clients or teams to understand.
+          </p>
+
+          <div class="skill-cloud" aria-label="Key skills">
+            <span>Prompt engineering</span>
+            <span>Audio optimization</span>
+            <span>SEO workflows</span>
+            <span>Responsive UI</span>
+            <span>Automation logic</span>
+            <span>Telegram Bot API</span>
+            <span>Canva and Figma</span>
+            <span>Performance basics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section section-muted">
+      <div class="container">
+        <div class="section-header centered" data-reveal>
+          <p class="eyebrow">Services</p>
+          <h2>Digital production services for modern projects.</h2>
+          <p>
+            Support for creative production, content systems, web presence, and automation.
           </p>
         </div>
 
         <div class="services-grid">
-          <article class="service-card">
-            <div>
-              <div class="service-tag">Service · Management</div>
-              <h3 class="service-title">Social Media Management</h3>
-              <p class="service-desc">
-                I’ll help you keep your social media active, organized and
-                consistent — even if you’re just starting out.
-              </p>
+          <article class="service-card" data-reveal>
+            <div class="service-icon">
+              <svg class="icon"><use href="#icon-music"></use></svg>
             </div>
-            <ul class="service-list">
-              <li>Content plan for 2–4 weeks</li>
-              <li>Planning posts, stories & basic reels ideas</li>
-              <li>Drafting captions and suggested posting schedule</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <div>
-              <div class="service-tag">Service · Content</div>
-              <h3 class="service-title">Content Creation</h3>
-              <p class="service-desc">
-                Simple, on-brand content created with free tools — ready to
-                post on Instagram, TikTok.
-              </p>
-            </div>
-            <ul class="service-list">
-              <li>Canva / Figma visuals for posts & stories</li>
-              <li>Text for posts, carousels and story sequences</li>
-              <li>Ideas for photos / short videos you can shoot yourself</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <div>
-              <div class="service-tag">Service · Strategy & Analytics</div>
-              <h3 class="service-title">Strategy & Analytics</h3>
-              <p class="service-desc">
-                A light, beginner-friendly approach to strategy: simple audit,
-                clear goals and basic metrics you can track.
-              </p>
-            </div>
-            <ul class="service-list">
-              <li>Quick audit of your current profile</li>
-              <li>Simple strategy & positioning suggestions</li>
-              <li>Basic analytics report (reach, ER, followers growth)</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-      <div class="container">
-        <div class="section-header">
-          <h2>Portfolio & sample case studies</h2>
-          <p>
-            A few example projects in the format I’ll use for real client case
-            studies.
-          </p>
-          <p class="portfolio-header-extra">
-            These are <strong>sample / educational projects</strong>. You can
-            later replace them with real cases and metrics.
-          </p>
-        </div>
-
-        <div class="case-grid">
-          <!-- SAMPLE CASE 1 -->
-          <article class="case-card">
-            <header>
-              <span class="case-label">Sample project · Educational case</span>
-              <h3 class="case-title">Local café launch</h3>
-              <p class="case-type">Instagram + TikTok · 4-week launch plan</p>
-            </header>
-
-            <div class="case-row">
-              <h4>Goal</h4>
-              <p>
-                Build awareness for a new local café before opening week and
-                collect first followers in the neighborhood.
-              </p>
-            </div>
-
-            <div class="case-row">
-              <h4>What I did</h4>
-              <ul>
-                <li>
-                  Created a 4-week content plan with teasers, behind-the-scenes
-                  and menu highlights.
-                </li>
-                <li>
-                  Designed simple Canva posts and story templates in the brand
-                  colors.
-                </li>
-                <li>
-                  Wrote captions with clear CTAs: save the opening date and
-                  share with friends.
-                </li>
-              </ul>
-            </div>
-
-            <div class="case-row">
-              <h4>Results (placeholder)</h4>
-              <ul class="case-metrics">
-                <li>+45% engagement rate</li>
-                <li>+30% followers in 1 month</li>
-                <li>5K accounts reached</li>
-              </ul>
-            </div>
-
-            <footer>
-              <p class="case-note">
-                This is a sample educational project. Replace with your real
-                café / local business case and exact numbers.
-              </p>
-            </footer>
-          </article>
-
-          <!-- SAMPLE CASE 2 -->
-          <article class="case-card">
-            <header>
-              <span class="case-label">Sample project · Personal brand</span>
-              <h3 class="case-title">Student personal brand on Instagram</h3>
-              <p class="case-type">
-                Instagram · content system for a student account
-              </p>
-            </header>
-
-            <div class="case-row">
-              <h4>Goal</h4>
-              <p>
-                Turn a random personal account into a simple student personal
-                brand: studies, hobbies, and early projects.
-              </p>
-            </div>
-
-            <div class="case-row">
-              <h4>What I did</h4>
-              <ul>
-                <li>Updated bio and highlights to reflect clear positioning.</li>
-                <li>
-                  Created a 3-post-per-week content plan (study, life, projects).
-                </li>
-                <li>
-                  Wrote captions with a casual but still professional tone of
-                  voice.
-                </li>
-              </ul>
-            </div>
-
-            <div class="case-row">
-              <h4>Results (placeholder)</h4>
-              <ul class="case-metrics">
-                <li>+25% profile visits</li>
-                <li>More saves & replies on story content</li>
-                <li>Clearer profile impression for teachers & recruiters</li>
-              </ul>
-            </div>
-
-            <footer>
-              <p class="case-note">
-                Replace this sample with your own personal account results:
-                follower growth, ER, profile visits, saves, etc.
-              </p>
-            </footer>
-          </article>
-
-          <!-- SAMPLE CASE 3 -->
-          <article class="case-card">
-            <header>
-              <span class="case-label">Sample project · Training task</span>
-              <h3 class="case-title">SMM for a small online shop</h3>
-              <p class="case-type">
-                Instagram · training project from SMM course
-              </p>
-            </header>
-
-            <div class="case-row">
-              <h4>Goal</h4>
-              <p>
-                Practice promoting a small online shop with a limited budget and
-                realistic content resources.
-              </p>
-            </div>
-
-            <div class="case-row">
-              <h4>What I did</h4>
-              <ul>
-                <li>
-                  Analyzed competitors and defined simple content pillars
-                  (product, reviews, tips).
-                </li>
-                <li>
-                  Prepared post & story templates, plus a basic UGC idea
-                  (customers’ photos).
-                </li>
-                <li>
-                  Planned monthly content with micro-goals for each week.
-                </li>
-              </ul>
-            </div>
-
-            <div class="case-row">
-              <h4>Results (placeholder)</h4>
-              <ul class="case-metrics">
-                <li>+30% engagement on educational posts</li>
-                <li>More replies to stories with questions & polls</li>
-                <li>Clear content structure for future campaigns</li>
-              </ul>
-            </div>
-
-            <footer>
-              <p class="case-note">
-                This structure matches real client case studies. Later you can
-                add screenshots, analytics and before/after examples.
-              </p>
-            </footer>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-        <div class="section-header">
-          <h2>Testimonials (samples)</h2>
-          <p>
-            Example quotes you can later replace with real feedback from
-            teachers, clients or mentors.
-          </p>
-        </div>
-
-        <div class="testimonial-grid">
-          <article class="testimonial-card">
-            <p class="testimonial-tag">Sample testimonial · Teacher</p>
-            <p class="testimonial-text">
-              “Mykyta showed strong motivation during our SMM course. He always
-              asked practical questions, tested ideas on real accounts and
-              delivered his projects on time. His portfolio clearly explains the
-              goals, actions and results of each case — exactly what clients
-              expect from a social media marketer.”
-            </p>
-            <p class="testimonial-author">Name Surname</p>
-            <p class="testimonial-role">SMM course instructor · City / School</p>
-          </article>
-
-          <article class="testimonial-card">
-            <p class="testimonial-tag">Sample testimonial · Local project</p>
-            <p class="testimonial-text">
-              “Working with Mykyta was easy and structured. He helped us create
-              a simple content plan, prepared visuals in Canva and wrote clear
-              captions for our posts and stories. Thanks to his support, we
-              finally started posting consistently and saw more engagement from
-              our small community.”
-            </p>
-            <p class="testimonial-author">Name Surname</p>
-            <p class="testimonial-role">
-              Owner of a local business · City / Project
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="section-header">
-          <h2>Let’s work together</h2>
-          <p>
-            Have a project, school initiative or personal account you’d like to
-            improve? Send me a message.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <form id="contact-form" class="contact-form">
-            <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" required placeholder="Your name" />
-            </div>
-
-            <div class="field">
-              <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                placeholder="you@example.com"
-              />
-            </div>
-
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                placeholder="Tell me briefly about your project, social media account or idea."
-              ></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-full">
-              Send message
-            </button>
-
-            <p id="form-status" class="form-status">
-              Thank you! Your message has been sent (demo). I’ll get back to you
-              as soon as I can.
-            </p>
-          </form>
-
-          <aside class="contact-info">
+            <h3>AI Music Production</h3>
             <p>
-              Prefer writing directly? You can also contact me via email or
-              social media. I usually reply within 1–2 business days.
+              Original AI-generated songs, prompt direction, track iteration, and audio
+              polishing for creative projects.
             </p>
+          </article>
 
-            <ul class="contact-links">
-              <!-- TODO: заміни email на свій -->
-              <li>
-                <a href="mailto:nickiakovenko@gmail.com">
-                  <span>Email:</span> nickiakovenko@gmail.com
-                </a>
-              </li>
+          <article class="service-card" data-reveal>
+            <div class="service-icon">
+              <svg class="icon"><use href="#icon-play"></use></svg>
+            </div>
+            <h3>YouTube Automation</h3>
+            <p>
+              Content workflows, SEO optimization, thumbnail planning, scheduling, and
+              channel growth systems.
+            </p>
+          </article>
 
-              <!-- TODO: заміни посилання на свій Instagram -->
-              <li>
-                <a href="https://www.instagram.com/prykl_admy/" target="_blank" rel="noreferrer">
-                  <span>Instagram:</span> https://www.instagram.com/prykl_admy/
-                </a>
-              </li>
+          <article class="service-card" data-reveal>
+            <div class="service-icon">
+              <svg class="icon"><use href="#icon-code"></use></svg>
+            </div>
+            <h3>Web Development</h3>
+            <p>
+              Responsive websites with clean layouts, fast loading, polished UI, and
+              client-friendly presentation.
+            </p>
+          </article>
 
-              <!-- TODO: заміни LinkedIn або постав іншу соцмережу -->
-              <li>
-                <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">
-                  <span>LinkedIn:</span> linkedin.com/in/your-linkedin
-                </a>
-              </li>
-            </ul>
-          </aside>
+          <article class="service-card" data-reveal>
+            <div class="service-icon">
+              <svg class="icon"><use href="#icon-bot"></use></svg>
+            </div>
+            <h3>Telegram Bots</h3>
+            <p>
+              Custom bots for notifications, automation, content management, user flows,
+              and admin tools.
+            </p>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section portfolio-section">
+      <div class="container">
+        <div class="section-header portfolio-heading" data-reveal>
+          <p class="eyebrow">Portfolio</p>
+          <h2>Selected project areas.</h2>
+          <p>
+            A focused overview of the work I can deliver, with previews, technical
+            features, and clear next steps for clients or employers.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" data-reveal>
+            <div class="project-visual music-visual" aria-hidden="true">
+              <div class="track-header">
+                <span>Original track</span>
+                <strong>03:18</strong>
+              </div>
+              <div class="track-wave">
+                <span style="--h: 34%"></span>
+                <span style="--h: 72%"></span>
+                <span style="--h: 51%"></span>
+                <span style="--h: 90%"></span>
+                <span style="--h: 64%"></span>
+                <span style="--h: 44%"></span>
+                <span style="--h: 82%"></span>
+                <span style="--h: 58%"></span>
+                <span style="--h: 74%"></span>
+                <span style="--h: 38%"></span>
+                <span style="--h: 69%"></span>
+                <span style="--h: 48%"></span>
+              </div>
+              <div class="track-steps">
+                <span>Prompt</span>
+                <span>Arrangement</span>
+                <span>Audio polish</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <p class="project-kicker">AI music production</p>
+              <h3>Suno AI Music Production</h3>
+              <p>
+                Creating original AI-generated music using Suno with structured prompt
+                engineering, genre direction, and audio optimization.
+              </p>
+              <ul class="project-list">
+                <li>Original song concepts, hooks, and style directions</li>
+                <li>Prompt testing for genre, mood, vocal tone, and structure</li>
+                <li>Audio cleanup, export preparation, and content-ready delivery</li>
+              </ul>
+              <div class="tech-stack">
+                <span>Suno</span>
+                <span>Prompt engineering</span>
+                <span>Audio editing</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contact" class="btn btn-small btn-primary" data-scroll>Request samples</a>
+                <a href="#contact" class="btn btn-small btn-link" data-scroll>Discuss a track</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-visual youtube-visual" aria-hidden="true">
+              <div class="thumbnail-frame">
+                <div class="play-badge">
+                  <svg class="icon"><use href="#icon-play"></use></svg>
+                </div>
+              </div>
+              <div class="youtube-dashboard">
+                <span>SEO score</span>
+                <strong>92%</strong>
+                <div class="progress-line"><span></span></div>
+              </div>
+              <div class="workflow-row">
+                <span>Script</span>
+                <span>Thumbnail</span>
+                <span>Publish</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <p class="project-kicker">Channel growth systems</p>
+              <h3>YouTube Automation</h3>
+              <p>
+                Managing and growing YouTube channels through repeatable content
+                workflows, searchable metadata, thumbnails, and publishing systems.
+              </p>
+              <ul class="project-list">
+                <li>Topic research, titles, descriptions, tags, and SEO checklists</li>
+                <li>Thumbnail concepts designed for clear visual hierarchy</li>
+                <li>Automated publishing processes and organized channel calendars</li>
+              </ul>
+              <div class="tech-stack">
+                <span>YouTube Studio</span>
+                <span>SEO</span>
+                <span>Canva</span>
+                <span>Automation</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contact" class="btn btn-small btn-primary" data-scroll>Plan a channel</a>
+                <a href="#contact" class="btn btn-small btn-link" data-scroll>Request workflow</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-visual web-visual" aria-hidden="true">
+              <div class="browser-frame">
+                <div class="browser-bar">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="browser-content">
+                  <div class="web-sidebar"></div>
+                  <div class="web-main">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="preview-links">
+                <span>Live</span>
+                <span>Demo</span>
+                <span>Preview</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <p class="project-kicker">Responsive web builds</p>
+              <h3>Web Development Projects</h3>
+              <p>
+                Several modern and responsive websites built with clean design,
+                optimized performance, and layouts that work well on mobile and desktop.
+              </p>
+              <ul class="project-list">
+                <li>Landing pages, portfolios, service websites, and business pages</li>
+                <li>Project previews with clear sections, polished UI, and calls to action</li>
+                <li>Technology notes, live/demo links, and deployment-ready structure</li>
+              </ul>
+              <div class="tech-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive design</span>
+                <span>SEO basics</span>
+              </div>
+              <div class="project-actions">
+                <a href="#hero" class="btn btn-small btn-primary" data-scroll>View live portfolio</a>
+                <a href="#contact" class="btn btn-small btn-link" data-scroll>Request demo links</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-visual bot-visual" aria-hidden="true">
+              <div class="phone-shell">
+                <div class="chat-line left">New request</div>
+                <div class="chat-line right">Auto reply sent</div>
+                <div class="chat-line left">Status update</div>
+              </div>
+              <div class="bot-nodes">
+                <span>Webhook</span>
+                <span>Database</span>
+                <span>Admin panel</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <p class="project-kicker">Automation and interaction</p>
+              <h3>Telegram Bot Development</h3>
+              <p>
+                Custom Telegram bots for automation, notifications, content management,
+                user interaction, and lightweight business workflows.
+              </p>
+              <ul class="project-list">
+                <li>Automated notifications, reminders, and admin alerts</li>
+                <li>User commands, menus, forms, and content moderation tools</li>
+                <li>Webhook or polling setup, logging, and scalable bot structure</li>
+              </ul>
+              <div class="tech-stack">
+                <span>Telegram Bot API</span>
+                <span>Python</span>
+                <span>Webhooks</span>
+                <span>Automation</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contact" class="btn btn-small btn-primary" data-scroll>Build a bot</a>
+                <a href="#contact" class="btn btn-small btn-link" data-scroll>See features</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section section-dark">
+      <div class="container">
+        <div class="section-header centered light" data-reveal>
+          <p class="eyebrow">Process</p>
+          <h2>A simple workflow that keeps projects clear.</h2>
+          <p>
+            Every project starts with the goal, then moves through execution,
+            testing, and a polished final handoff.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step" data-reveal>
+            <span>01</span>
+            <h3>Define the goal</h3>
+            <p>
+              We clarify the audience, platform, deliverables, and what a successful
+              result should look like.
+            </p>
+          </article>
+
+          <article class="process-step" data-reveal>
+            <span>02</span>
+            <h3>Build the system</h3>
+            <p>
+              I create the content, website, automation, or bot structure with clean
+              organization and practical details.
+            </p>
+          </article>
+
+          <article class="process-step" data-reveal>
+            <span>03</span>
+            <h3>Polish and hand off</h3>
+            <p>
+              The final work is reviewed for quality, responsiveness, usability, and
+              clear next steps.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container contact-layout">
+        <div class="contact-copy" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2>Have a project in mind?</h2>
+          <p>
+            Send a short message about your idea, channel, website, or automation need.
+            I will reply with the best next step.
+          </p>
+
+          <ul class="contact-list">
+            <li>
+              <a href="mailto:nickiakovenko@gmail.com">
+                <svg class="icon"><use href="#icon-mail"></use></svg>
+                nickiakovenko@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/prykl_admy/" target="_blank" rel="noreferrer">
+                Instagram: @prykl_admy
+              </a>
+            </li>
+            <li>
+              <a href="My_CV_Mykyta_Yakovenko.pdf" target="_blank" rel="noreferrer">
+                <svg class="icon"><use href="#icon-download"></use></svg>
+                Download CV
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <form id="contact-form" class="contact-form" data-recipient="nickiakovenko@gmail.com" data-reveal>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your name" />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          </div>
+
+          <div class="field">
+            <label for="project">Project type</label>
+            <select id="project" name="project">
+              <option value="AI music production">AI music production</option>
+              <option value="YouTube automation">YouTube automation</option>
+              <option value="Web development">Web development</option>
+              <option value="Telegram bot development">Telegram bot development</option>
+              <option value="Other digital project">Other digital project</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Tell me briefly about the goal, timeline, and what you want to build."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            Open email draft
+            <svg class="icon"><use href="#icon-arrow-right"></use></svg>
+          </button>
+
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>
-        © <span id="year"></span> Mykyta Yakovenko. All rights reserved.
-      </p>
-      <div class="footer-links">
-        <a href="#hero" data-scroll>Back to top</a>
-      </div>
+      <p>&copy; <span id="year"></span> Mykyta Yakovenko. All rights reserved.</p>
+      <a href="#hero" data-scroll>Back to top</a>
     </div>
   </footer>
 
-  <!-- External scripts -->
   <script src="js/script.js" defer></script>
 </body>
 </html>

@@ -1,26 +1,30 @@
-
-
 // js/script.js
 (function () {
   "use strict";
 
-  // ========= НАСТРОЙКИ TELEGRAM =========
-  // ⚠️ ПІДСТАВ СЮДИ СВІЙ НОВИЙ ТОКЕН ТА CHAT_ID
-  const TELEGRAM_BOT_TOKEN = "8580437525:AAGJC0I6vKuTx1JhNRVX_d5Zu_8jjv8x6kw";
-  const TELEGRAM_CHAT_ID = "-1003280524769"; // ID групи або приватного чату
-  const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-
-  // ========= ФІКСОВАНИЙ ХЕДЕР =========
+  const body = document.body;
   const header = document.querySelector(".site-header");
-  let headerHeight = header ? header.offsetHeight : 0;
-
-  window.addEventListener("resize", () => {
-    headerHeight = header ? header.offsetHeight : 0;
-  });
-
-  // ========= МОБІЛЬНЕ МЕНЮ =========
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".nav-links");
+  const menuLinks = Array.from(document.querySelectorAll(".nav-links a[href^='#']"));
+  const scrollLinks = document.querySelectorAll("a[data-scroll], a[href^='#']");
+  const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
+  const form = document.getElementById("contact-form");
+  const statusEl = document.getElementById("form-status");
+  const yearSpan = document.getElementById("year");
+
+  let headerHeight = header ? header.offsetHeight : 0;
+  let raf = 0;
+
+  function updateHeaderHeight() {
+    headerHeight = header ? header.offsetHeight : 0;
+  }
+
+  function closeMenu() {
+    if (!navToggle || !navLinks) return;
+    navLinks.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
 
   if (navToggle && navLinks) {
     navToggle.addEventListener("click", () => {
@@ -28,29 +32,26 @@
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    navLinks.querySelectorAll("a[data-scroll]").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
-      });
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (!target.closest(".site-nav")) closeMenu();
     });
   }
-
-  // ========= ПЛАВНИЙ СКРОЛ З УРАХУВАННЯМ FIXED-ХЕДЕРА =========
-  const scrollLinks = document.querySelectorAll('a[data-scroll], a[href^="#"]');
 
   scrollLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
       const href = link.getAttribute("href");
-      if (!href || href === "#" || href === "#0") return;
+      if (!href || href === "#" || href === "#0" || !href.startsWith("#")) return;
 
       const target = document.querySelector(href);
       if (!target) return;
 
       event.preventDefault();
+      closeMenu();
 
       const rect = target.getBoundingClientRect();
-      const offset = rect.top + window.pageYOffset - headerHeight - 8;
+      const offset = rect.top + window.pageYOffset - headerHeight - 10;
 
       window.scrollTo({
         top: offset,
@@ -59,147 +60,128 @@
     });
   });
 
-  // ========= АКТИВНИЙ ПУНКТ МЕНЮ ПРИ СКРОЛІ =========
-  const menuLinks = document.querySelectorAll(".nav-links a[href^='#']");
-
-  // id секції -> лінк меню
   const linkById = new Map();
-  menuLinks.forEach((a) => {
-    const href = a.getAttribute("href");
-    if (!href || href === "#" || href === "#0") return;
+  menuLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || !href.startsWith("#")) return;
 
     const id = href.slice(1);
-    const section = document.getElementById(id);
-    if (section) linkById.set(id, a);
+    if (document.getElementById(id)) {
+      linkById.set(id, link);
+    }
   });
 
-  let sections = Array.from(linkById.keys())
-    .map((id) => document.getElementById(id))
-    .filter(Boolean);
-
   function setActiveLink(activeId) {
-    menuLinks.forEach((a) => {
-      a.classList.remove("is-active");
-      a.removeAttribute("aria-current");
+    menuLinks.forEach((link) => {
+      link.classList.remove("is-active");
+      link.removeAttribute("aria-current");
     });
 
-    if (!activeId) return;
-
-    const activeLink = linkById.get(activeId);
+    const activeLink = activeId ? linkById.get(activeId) : null;
     if (activeLink) {
       activeLink.classList.add("is-active");
       activeLink.setAttribute("aria-current", "page");
     }
   }
 
-  function updateActiveOnScroll() {
-    const hh = header ? header.offsetHeight : headerHeight;
-    const y = window.scrollY + hh + 24; // 24px — “запас” під хедером
+  function updateActiveLink() {
+    const sections = Array.from(linkById.keys())
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
 
-    // Якщо доскролили до самого низу — активуємо останню секцію
+    const scrollPosition = window.scrollY + headerHeight + 40;
     const nearBottom =
-      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+
     if (nearBottom && sections.length) {
       setActiveLink(sections[sections.length - 1].id);
       return;
     }
 
     let currentId = null;
-    for (const section of sections) {
-      if (section.offsetTop <= y) currentId = section.id;
-      else break;
-    }
-
-    // якщо ще вище першої секції з меню — нічого не підсвічуємо
-    if (sections[0] && y < sections[0].offsetTop) currentId = null;
+    sections.forEach((section) => {
+      if (section.offsetTop <= scrollPosition) currentId = section.id;
+    });
 
     setActiveLink(currentId);
   }
 
-  let raf = 0;
   function onScrollOrResize() {
     if (raf) return;
-    raf = requestAnimationFrame(() => {
+
+    raf = window.requestAnimationFrame(() => {
       raf = 0;
+      updateHeaderHeight();
+      updateActiveLink();
+    });
+  }
 
-      // на resize/переломах може змінитися висота/позиції
-      sections = Array.from(linkById.keys())
-        .map((id) => document.getElementById(id))
-        .filter(Boolean);
+  if (revealItems.length) {
+    body.classList.add("reveal-ready");
+    revealItems.forEach((item) => item.classList.add("reveal"));
 
-      updateActiveOnScroll();
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+  }
+
+  function showStatus(message, isError) {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.style.color = isError ? "#b91c1c" : "#15803d";
+  }
+
+  if (form) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const recipient = form.dataset.recipient || "nickiakovenko@gmail.com";
+      const name = String(formData.get("name") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const project = String(formData.get("project") || "").trim();
+      const message = String(formData.get("message") || "").trim();
+
+      if (!name || !email || !message) {
+        showStatus("Please fill in your name, email, and message.", true);
+        return;
+      }
+
+      const subject = encodeURIComponent(`Portfolio inquiry: ${project || "New project"}`);
+      const bodyText = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Project type: ${project || "Not specified"}`,
+        "",
+        "Message:",
+        message,
+      ].join("\n");
+
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
+      showStatus("Your email app is opening with a prepared message.", false);
+      form.reset();
     });
   }
 
   window.addEventListener("scroll", onScrollOrResize, { passive: true });
   window.addEventListener("resize", onScrollOrResize);
+  updateHeaderHeight();
+  updateActiveLink();
 
-  // первинне підсвічування
-  updateActiveOnScroll();
-
-
-
-  // ========= ВІДПРАВКА ФОРМИ У TELEGRAM =========
-  const form = document.getElementById("contact-form");
-  const statusEl = document.getElementById("form-status");
-
-  function showStatus(message, isError = false) {
-    if (!statusEl) return;
-    statusEl.textContent = message;
-    statusEl.style.color = isError ? "#fecaca" : "#a7f3d0";
-    statusEl.classList.add("visible");
-
-    setTimeout(() => {
-      statusEl.classList.remove("visible");
-    }, 4000);
-  }
-
-  if (form) {
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-      const name = formData.get("name") || "—";
-      const email = formData.get("email") || "—";
-      const message = formData.get("message") || "—";
-
-      // Формуємо текст для Telegram
-      const text =
-        "📩 <b>Нова заявка з портфоліо</b>\n\n" +
-        `👤 <b>Ім'я:</b> ${name}\n` +
-        `📧 <b>Email:</b> ${email}\n` +
-        `💬 <b>Повідомлення:</b>\n${message}`;
-
-      // Створюємо URL з GET-параметрами
-      const url = new URL(TELEGRAM_API_URL);
-      url.searchParams.set("chat_id", TELEGRAM_CHAT_ID);
-      url.searchParams.set("text", text);
-      url.searchParams.set("parse_mode", "HTML");
-
-      try {
-        // Через CORS ми не зможемо прочитати відповідь, але запит піде
-        await fetch(url.toString(), {
-          method: "GET",
-          mode: "no-cors", // важливо: інакше браузер заблокує через CORS
-        });
-
-        form.reset();
-        showStatus(
-          "Thank you! Your message was sent. Please check the Telegram group.",
-          false
-        );
-      } catch (err) {
-        console.error("Telegram send error:", err);
-        showStatus(
-          "Oops, something went wrong. Please try again later or contact me directly by email.",
-          true
-        );
-      }
-    });
-  }
-
-  // ========= ПОТОЧНИЙ РІК У ФУТЕРІ =========
-  const yearSpan = document.getElementById("year");
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear().toString();
   }
