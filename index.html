@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <title>Mykyta Yakovenko – Junior SMM Marketer</title>
+  <title>Mykyta Yakovenko — Учень та IT-ентузіаст</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Portfolio of Mykyta Yakovenko: AI music production, YouTube automation, responsive web development, Telegram bot development, and digital content systems."
+    content="Портфоліо Микити Яковенка — учня 11 класу, який цікавиться Python, дата-аналітикою, Telegram-ботами, YOLO та технологіями."
   />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -38,17 +38,19 @@
       <rect x="3" y="5" width="18" height="14" rx="2"></rect>
       <path d="m3 7 9 6 9-6"></path>
     </symbol>
-    <symbol id="icon-music" viewBox="0 0 24 24">
-      <path d="M9 18V5l11-2v13"></path>
-      <circle cx="6" cy="18" r="3"></circle>
-      <circle cx="17" cy="16" r="3"></circle>
-    </symbol>
     <symbol id="icon-play" viewBox="0 0 24 24">
       <circle cx="12" cy="12" r="9"></circle>
       <path d="m10 8 6 4-6 4V8Z"></path>
     </symbol>
-    <symbol id="icon-check" viewBox="0 0 24 24">
-      <path d="m5 12 4 4L19 6"></path>
+    <symbol id="icon-eye" viewBox="0 0 24 24">
+      <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+      <circle cx="12" cy="12" r="2.5"></circle>
+    </symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24">
+      <path d="M4 19V5"></path>
+      <path d="M4 19h16"></path>
+      <path d="m7 15 4-4 3 2 5-6"></path>
+      <path d="M16 7h3v3"></path>
     </symbol>
   </svg>
 
@@ -59,18 +61,18 @@
         <span class="logo-text">Portfolio</span>
       </a>
 
-      <nav class="site-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="site-nav" aria-label="Основна навігація">
+        <button class="nav-toggle" aria-expanded="false" aria-label="Відкрити навігацію">
           <span></span>
           <span></span>
         </button>
 
         <ul class="nav-links">
-          <li><a href="#about" data-scroll>About</a></li>
-          <li><a href="#services" data-scroll>Services</a></li>
-          <li><a href="#portfolio" data-scroll>Portfolio</a></li>
-          <li><a href="#process" data-scroll>Process</a></li>
-          <li><a href="#contact" data-scroll>Contact</a></li>
+          <li><a href="#about" data-scroll>Про мене</a></li>
+          <li><a href="#services" data-scroll>Послуги</a></li>
+          <li><a href="#portfolio" data-scroll>Projects</a></li>
+          <li><a href="#process" data-scroll>Підхід</a></li>
+          <li><a href="#contact" data-scroll>Контакти</a></li>
         </ul>
       </nav>
 
@@ -87,128 +89,83 @@
           <p class="eyebrow">Digital portfolio</p>
           <h1>Mykyta Yakovenko</h1>
           <p class="hero-lede">
-            AI music production, YouTube automation, modern websites, and Telegram bots
-            built with clean execution and a business-focused mindset.
+            Я учень, який розвивається в ІТ: цікавлюся Python, аналізом даних,
+            створенням Telegram-ботів, навчанням моделей YOLO розпізнавати об’єкти
+            та роботою з Word, Excel і PowerPoint.
           </p>
 
           <div class="hero-actions">
             <a href="#portfolio" class="btn btn-primary" data-scroll>
-              View projects
+              Переглянути проєкти
               <svg class="icon"><use href="#icon-arrow-right"></use></svg>
             </a>
-            <a href="#contact" class="btn btn-secondary" data-scroll>Start a project</a>
+            <a href="#contact" class="btn btn-secondary" data-scroll>Написати мені</a>
           </div>
 
-          <div class="hero-proof" aria-label="Portfolio highlights">
+          <div class="hero-proof" aria-label="Основні напрями">
             <div>
-              <strong>4</strong>
-              <span>Project areas</span>
+              <strong>11 клас</strong>
+              <span>Навчаюся й розвиваюся</span>
             </div>
             <div>
-              <strong>Clean</strong>
-              <span>Client-ready delivery</span>
+              <strong>Python</strong>
+              <span>Боти та автоматизація</span>
             </div>
             <div>
-              <strong>Responsive</strong>
-              <span>Mobile-first layouts</span>
+              <strong>YOLO</strong>
+              <span>Комп’ютерний зір</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-workspace" aria-label="Preview of Mykyta's digital project work" data-reveal>
-          <div class="workspace-topbar">
-            <span></span>
-            <span></span>
-            <span></span>
-            <p>Project command center</p>
+        <figure class="hero-portrait" data-reveal>
+          <div class="portrait-frame">
+            <img
+              src="Images/avatar.jpg"
+              alt="Портрет Микити Яковенка"
+              width="1254"
+              height="1254"
+              fetchpriority="high"
+            />
           </div>
-
-          <div class="workspace-grid">
-            <div class="workspace-panel panel-wide">
-              <div class="panel-title">
-                <svg class="icon"><use href="#icon-music"></use></svg>
-                AI music track
-              </div>
-              <div class="waveform">
-                <span style="--h: 42%"></span>
-                <span style="--h: 74%"></span>
-                <span style="--h: 58%"></span>
-                <span style="--h: 88%"></span>
-                <span style="--h: 48%"></span>
-                <span style="--h: 68%"></span>
-                <span style="--h: 36%"></span>
-                <span style="--h: 78%"></span>
-                <span style="--h: 52%"></span>
-                <span style="--h: 64%"></span>
-              </div>
-            </div>
-
-            <div class="workspace-panel">
-              <div class="panel-title">
-                <svg class="icon"><use href="#icon-play"></use></svg>
-                YouTube
-              </div>
-              <div class="mini-video">
-                <div></div>
-                <span></span>
-              </div>
-            </div>
-
-            <div class="workspace-panel">
-              <div class="panel-title">
-                <svg class="icon"><use href="#icon-bot"></use></svg>
-                Bot flow
-              </div>
-              <div class="bot-flow">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <div class="workspace-panel panel-wide">
-              <div class="panel-title">
-                <svg class="icon"><use href="#icon-code"></use></svg>
-                Web preview
-              </div>
-              <div class="browser-lines">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          </div>
-        </div>
+          <figcaption>
+            <strong>Mykyta Yakovenko</strong>
+            <span>Учень · IT-ентузіаст</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
     <section id="about" class="section">
       <div class="container two-column">
         <div class="section-header" data-reveal>
-          <p class="eyebrow">About</p>
-          <h2>Practical digital work with a clear outcome.</h2>
+          <p class="eyebrow">Про мене</p>
+          <h2>Учень 11 класу, який хоче розвиватися в IT.</h2>
         </div>
 
         <div class="about-content" data-reveal>
           <p>
-            I create polished digital assets and automation systems for creators,
-            small businesses, and personal brands. My work combines content production,
-            simple strategy, technical setup, and clean presentation.
+            Я навчаюся в 11 класі та цікавлюся IT-індустрією, дата-аналітикою,
+            робототехнікою і сучасними технологіями. Мені подобається розбиратися,
+            як працюють програми та пристрої, і застосовувати знання у власних
+            навчальних проєктах.
           </p>
           <p>
-            The goal is straightforward: make projects look professional, work reliably,
-            and feel easy for clients or teams to understand.
+            Зараз я поглиблюю знання Python, створення Telegram-ботів, аналізу даних
+            та комп’ютерного зору. Дуже хочу в майбутньому працювати у цій сфері й
+            поступово здобувати практичний досвід.
           </p>
 
-          <div class="skill-cloud" aria-label="Key skills">
-            <span>Prompt engineering</span>
-            <span>Audio optimization</span>
-            <span>SEO workflows</span>
-            <span>Responsive UI</span>
-            <span>Automation logic</span>
+          <div class="skill-cloud" aria-label="Навички та інтереси">
+            <span>Python</span>
+            <span>Дата-аналітика</span>
             <span>Telegram Bot API</span>
-            <span>Canva and Figma</span>
-            <span>Performance basics</span>
+            <span>YOLO</span>
+            <span>Робототехніка</span>
+            <span>Word / DOCX</span>
+            <span>Excel</span>
+            <span>PowerPoint</span>
+            <span>HTML / CSS</span>
           </div>
         </div>
       </div>
@@ -217,33 +174,44 @@
     <section id="services" class="section section-muted">
       <div class="container">
         <div class="section-header centered" data-reveal>
-          <p class="eyebrow">Services</p>
-          <h2>Digital production services for modern projects.</h2>
+          <p class="eyebrow">Послуги</p>
+          <h2>Невеликі IT-завдання, з якими я можу допомогти.</h2>
           <p>
-            Support for creative production, content systems, web presence, and automation.
+            Беруся за зрозумілі, невеликі проєкти та заздалегідь обговорюю їхній обсяг.
           </p>
         </div>
 
         <div class="services-grid">
           <article class="service-card" data-reveal>
             <div class="service-icon">
-              <svg class="icon"><use href="#icon-music"></use></svg>
+              <svg class="icon"><use href="#icon-bot"></use></svg>
             </div>
-            <h3>AI Music Production</h3>
+            <h3>Telegram-бот</h3>
             <p>
-              Original AI-generated songs, prompt direction, track iteration, and audio
-              polishing for creative projects.
+              Простий бот для нагадувань, команд, повідомлень або іншого нескладного
+              сценарію.
             </p>
           </article>
 
           <article class="service-card" data-reveal>
             <div class="service-icon">
-              <svg class="icon"><use href="#icon-play"></use></svg>
+              <svg class="icon"><use href="#icon-eye"></use></svg>
             </div>
-            <h3>YouTube Automation</h3>
+            <h3>Розпізнавання об’єктів YOLO</h3>
             <p>
-              Content workflows, SEO optimization, thumbnail planning, scheduling, and
-              channel growth systems.
+              Допоможу підготувати дані й навчити базову модель YOLO розпізнавати
+              потрібні об’єкти.
+            </p>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <div class="service-icon">
+              <svg class="icon"><use href="#icon-chart"></use></svg>
+            </div>
+            <h3>Проста автоматизація та графіки</h3>
+            <p>
+              Обробка даних із таблиць, нескладна автоматизація та наочні графіки для
+              демонстрації клієнту.
             </p>
           </article>
 
@@ -251,21 +219,10 @@
             <div class="service-icon">
               <svg class="icon"><use href="#icon-code"></use></svg>
             </div>
-            <h3>Web Development</h3>
+            <h3>Дуже прості сайти</h3>
             <p>
-              Responsive websites with clean layouts, fast loading, polished UI, and
-              client-friendly presentation.
-            </p>
-          </article>
-
-          <article class="service-card" data-reveal>
-            <div class="service-icon">
-              <svg class="icon"><use href="#icon-bot"></use></svg>
-            </div>
-            <h3>Telegram Bots</h3>
-            <p>
-              Custom bots for notifications, automation, content management, user flows,
-              and admin tools.
+              Невеликі односторінкові сайти або сторінки-портфоліо на HTML, CSS і
+              JavaScript.
             </p>
           </article>
         </div>
@@ -275,195 +232,198 @@
     <section id="portfolio" class="section portfolio-section">
       <div class="container">
         <div class="section-header portfolio-heading" data-reveal>
-          <p class="eyebrow">Portfolio</p>
-          <h2>Selected project areas.</h2>
+          <p class="eyebrow">Projects</p>
+          <h2>Проєкти, над якими я працював.</h2>
           <p>
-            A focused overview of the work I can deliver, with previews, technical
-            features, and clear next steps for clients or employers.
+            Тут зібрані навчальні та практичні роботи. Нову картку легко додати,
+            скопіювавши один блок <code>project-card</code> нижче.
           </p>
         </div>
 
         <div class="project-grid">
-          <article class="project-card" data-reveal>
-            <div class="project-visual music-visual" aria-hidden="true">
-              <div class="track-header">
-                <span>Original track</span>
-                <strong>03:18</strong>
-              </div>
-              <div class="track-wave">
-                <span style="--h: 34%"></span>
-                <span style="--h: 72%"></span>
-                <span style="--h: 51%"></span>
-                <span style="--h: 90%"></span>
-                <span style="--h: 64%"></span>
-                <span style="--h: 44%"></span>
-                <span style="--h: 82%"></span>
-                <span style="--h: 58%"></span>
-                <span style="--h: 74%"></span>
-                <span style="--h: 38%"></span>
-                <span style="--h: 69%"></span>
-                <span style="--h: 48%"></span>
-              </div>
-              <div class="track-steps">
-                <span>Prompt</span>
-                <span>Arrangement</span>
-                <span>Audio polish</span>
-              </div>
+          <!-- Щоб додати проєкт, скопіюйте цілий article.project-card і змініть медіа, текст, теги та посилання. -->
+          <article class="project-card project-card--featured" data-reveal>
+            <div class="project-media project-media--image">
+              <img
+                src="Images/tg-bot.jpg"
+                alt="Скріншот Telegram-бота Reminder Assistant"
+                width="1042"
+                height="979"
+                loading="lazy"
+              />
             </div>
-
             <div class="project-content">
-              <p class="project-kicker">AI music production</p>
-              <h3>Suno AI Music Production</h3>
+              <p class="project-kicker">Telegram bot</p>
+              <h3>Reminder Assistant</h3>
               <p>
-                Creating original AI-generated music using Suno with structured prompt
-                engineering, genre direction, and audio optimization.
+                Бот для створення нагадувань, щоб не забувати про важливі справи та
+                події.
               </p>
               <ul class="project-list">
-                <li>Original song concepts, hooks, and style directions</li>
-                <li>Prompt testing for genre, mood, vocal tone, and structure</li>
-                <li>Audio cleanup, export preparation, and content-ready delivery</li>
+                <li>Додавання нагадувань через Telegram</li>
+                <li>Зручний сценарій для щоденних задач</li>
               </ul>
               <div class="tech-stack">
-                <span>Suno</span>
-                <span>Prompt engineering</span>
-                <span>Audio editing</span>
-              </div>
-              <div class="project-actions">
-                <a href="#contact" class="btn btn-small btn-primary" data-scroll>Request samples</a>
-                <a href="#contact" class="btn btn-small btn-link" data-scroll>Discuss a track</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-visual youtube-visual" aria-hidden="true">
-              <div class="thumbnail-frame">
-                <div class="play-badge">
-                  <svg class="icon"><use href="#icon-play"></use></svg>
-                </div>
-              </div>
-              <div class="youtube-dashboard">
-                <span>SEO score</span>
-                <strong>92%</strong>
-                <div class="progress-line"><span></span></div>
-              </div>
-              <div class="workflow-row">
-                <span>Script</span>
-                <span>Thumbnail</span>
-                <span>Publish</span>
-              </div>
-            </div>
-
-            <div class="project-content">
-              <p class="project-kicker">Channel growth systems</p>
-              <h3>YouTube Automation</h3>
-              <p>
-                Managing and growing YouTube channels through repeatable content
-                workflows, searchable metadata, thumbnails, and publishing systems.
-              </p>
-              <ul class="project-list">
-                <li>Topic research, titles, descriptions, tags, and SEO checklists</li>
-                <li>Thumbnail concepts designed for clear visual hierarchy</li>
-                <li>Automated publishing processes and organized channel calendars</li>
-              </ul>
-              <div class="tech-stack">
-                <span>YouTube Studio</span>
-                <span>SEO</span>
-                <span>Canva</span>
-                <span>Automation</span>
-              </div>
-              <div class="project-actions">
-                <a href="#contact" class="btn btn-small btn-primary" data-scroll>Plan a channel</a>
-                <a href="#contact" class="btn btn-small btn-link" data-scroll>Request workflow</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-visual web-visual" aria-hidden="true">
-              <div class="browser-frame">
-                <div class="browser-bar">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                <div class="browser-content">
-                  <div class="web-sidebar"></div>
-                  <div class="web-main">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-              </div>
-              <div class="preview-links">
-                <span>Live</span>
-                <span>Demo</span>
-                <span>Preview</span>
-              </div>
-            </div>
-
-            <div class="project-content">
-              <p class="project-kicker">Responsive web builds</p>
-              <h3>Web Development Projects</h3>
-              <p>
-                Several modern and responsive websites built with clean design,
-                optimized performance, and layouts that work well on mobile and desktop.
-              </p>
-              <ul class="project-list">
-                <li>Landing pages, portfolios, service websites, and business pages</li>
-                <li>Project previews with clear sections, polished UI, and calls to action</li>
-                <li>Technology notes, live/demo links, and deployment-ready structure</li>
-              </ul>
-              <div class="tech-stack">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Responsive design</span>
-                <span>SEO basics</span>
-              </div>
-              <div class="project-actions">
-                <a href="#hero" class="btn btn-small btn-primary" data-scroll>View live portfolio</a>
-                <a href="#contact" class="btn btn-small btn-link" data-scroll>Request demo links</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-visual bot-visual" aria-hidden="true">
-              <div class="phone-shell">
-                <div class="chat-line left">New request</div>
-                <div class="chat-line right">Auto reply sent</div>
-                <div class="chat-line left">Status update</div>
-              </div>
-              <div class="bot-nodes">
-                <span>Webhook</span>
-                <span>Database</span>
-                <span>Admin panel</span>
-              </div>
-            </div>
-
-            <div class="project-content">
-              <p class="project-kicker">Automation and interaction</p>
-              <h3>Telegram Bot Development</h3>
-              <p>
-                Custom Telegram bots for automation, notifications, content management,
-                user interaction, and lightweight business workflows.
-              </p>
-              <ul class="project-list">
-                <li>Automated notifications, reminders, and admin alerts</li>
-                <li>User commands, menus, forms, and content moderation tools</li>
-                <li>Webhook or polling setup, logging, and scalable bot structure</li>
-              </ul>
-              <div class="tech-stack">
-                <span>Telegram Bot API</span>
                 <span>Python</span>
-                <span>Webhooks</span>
-                <span>Automation</span>
+                <span>Telegram Bot API</span>
               </div>
               <div class="project-actions">
-                <a href="#contact" class="btn btn-small btn-primary" data-scroll>Build a bot</a>
-                <a href="#contact" class="btn btn-small btn-link" data-scroll>See features</a>
+                <a
+                  href="https://github.com/mykyta680/ReminderAssistant"
+                  class="btn btn-small btn-primary"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Переглянути на GitHub
+                  <svg class="icon"><use href="#icon-arrow-right"></use></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-media project-media--video">
+              <video controls preload="metadata" playsinline>
+                <source src="videos/yolo.mp4" type="video/mp4" />
+                Ваш браузер не підтримує відтворення відео.
+              </video>
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">Computer vision</p>
+              <h3>Розпізнавання солодощів YOLO</h3>
+              <p>
+                Навчив модель YOLO розпізнавати солодощі за п’ятьма класами та
+                перевірив результат на відео.
+              </p>
+              <ul class="project-list">
+                <li>5 класів об’єктів</li>
+                <li>Навчання й перевірка моделі на відео</li>
+              </ul>
+              <div class="tech-stack">
+                <span>Python</span>
+                <span>YOLO</span>
+                <span>Computer Vision</span>
+              </div>
+              <!-- Коли буде репозиторій, розкоментуйте:
+              <div class="project-actions">
+                <a href="https://github.com/" class="btn btn-small btn-primary" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+              -->
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-media project-placeholder project-placeholder--game" role="img" aria-label="Декоративний макет вікна Python-гри">
+              <!-- Коли буде скрін гри, замініть макет на:
+              <img src="Images/python-game.jpg" alt="Скріншот гри на Python" loading="lazy" />
+              -->
+              <div class="game-window" aria-hidden="true">
+                <div class="game-window__bar"><span></span><span></span><span></span></div>
+                <div class="game-window__screen">
+                  <strong>Python game</strong>
+                  <span>tkinter</span>
+                  <i></i>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">Python</p>
+              <h3>Невелика гра на Tkinter</h3>
+              <p>
+                Легка навчальна гра на Python із графічним інтерфейсом, створеним за
+                допомогою бібліотеки Tkinter.
+              </p>
+              <div class="tech-stack">
+                <span>Python</span>
+                <span>Tkinter</span>
+              </div>
+              <!-- Коли буде посилання, розкоментуйте:
+              <div class="project-actions">
+                <a href="https://github.com/" class="btn btn-small btn-primary" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+              -->
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-media project-media--image project-media--youtube">
+              <img
+                src="Images/youtube-suno.jpg"
+                alt="Скріншот проєкту Suno та AutoYouTube"
+                width="1280"
+                height="622"
+                loading="lazy"
+              />
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">Автоматизація</p>
+              <h3>Suno + AutoYouTube</h3>
+              <p>
+                Автоматизація через API: бере з Excel пісні на потрібну дату, генерує
+                зображення, поєднує аудіо й фото у відео та публікує його на YouTube.
+              </p>
+              <div class="tech-stack">
+                <span>Python</span>
+                <span>Excel</span>
+                <span>API</span>
+                <span>YouTube</span>
+              </div>
+              <!-- Коли буде посилання на репозиторій, розкоментуйте:
+              <div class="project-actions">
+                <a href="https://github.com/" class="btn btn-small btn-primary" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+              -->
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-media project-placeholder project-placeholder--arduino" role="img" aria-label="Декоративний макет Arduino-проєкту">
+              <!-- Коли буде фото, замініть макет на:
+              <img src="Images/arduino-project.jpg" alt="Arduino-проєкт" loading="lazy" />
+              -->
+              <div class="arduino-board" aria-hidden="true">
+                <span class="arduino-board__label">Arduino</span>
+                <span class="arduino-board__chip"></span>
+                <span class="arduino-board__pin arduino-board__pin--one"></span>
+                <span class="arduino-board__pin arduino-board__pin--two"></span>
+                <span class="arduino-board__pin arduino-board__pin--three"></span>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">Робототехніка</p>
+              <h3>Навчальний Arduino-проєкт</h3>
+              <p>
+                Навчальна робота з Arduino, яка допомогла краще зрозуміти роботу
+                мікроконтролерів, датчиків і підключення компонентів.
+              </p>
+              <div class="tech-stack">
+                <span>Arduino</span>
+                <span>Електроніка</span>
+              </div>
+              <!-- Коли будуть фото та репозиторій, розкоментуйте:
+              <div class="project-actions">
+                <a href="https://github.com/" class="btn btn-small btn-primary" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+              -->
+            </div>
+          </article>
+
+          <article class="project-card project-card--future" data-reveal>
+            <div class="project-media project-placeholder project-placeholder--future" role="img" aria-label="Місце для наступного проєкту">
+              <span aria-hidden="true">+</span>
+              <p>Наступний проєкт</p>
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">Далі буде</p>
+              <h3>Наступна робота вже тут</h3>
+              <p>
+                Це місце для нового навчального або практичного проєкту. Додайте
+                фото, короткий опис, технології та посилання на GitHub, коли все буде
+                готово.
+              </p>
+              <div class="tech-stack">
+                <span>Нові навички</span>
+                <span>Практика</span>
               </div>
             </div>
           </article>
@@ -474,39 +434,39 @@
     <section id="process" class="section section-dark">
       <div class="container">
         <div class="section-header centered light" data-reveal>
-          <p class="eyebrow">Process</p>
-          <h2>A simple workflow that keeps projects clear.</h2>
+          <p class="eyebrow">Підхід</p>
+          <h2>Як я працюю над навчальними та невеликими задачами.</h2>
           <p>
-            Every project starts with the goal, then moves through execution,
-            testing, and a polished final handoff.
+            Спочатку уточнюю мету, потім роблю зрозумілий варіант рішення та перевіряю
+            результат.
           </p>
         </div>
 
         <div class="process-grid">
           <article class="process-step" data-reveal>
             <span>01</span>
-            <h3>Define the goal</h3>
+            <h3>Уточнюю задачу</h3>
             <p>
-              We clarify the audience, platform, deliverables, and what a successful
-              result should look like.
+              Дізнаюся, який результат потрібен, які є матеріали та що має бути в
+              готовому проєкті.
             </p>
           </article>
 
           <article class="process-step" data-reveal>
             <span>02</span>
-            <h3>Build the system</h3>
+            <h3>Створюю рішення</h3>
             <p>
-              I create the content, website, automation, or bot structure with clean
-              organization and practical details.
+              Підбираю простий і зрозумілий спосіб зробити сайт, бота, модель або
+              автоматизацію.
             </p>
           </article>
 
           <article class="process-step" data-reveal>
             <span>03</span>
-            <h3>Polish and hand off</h3>
+            <h3>Перевіряю результат</h3>
             <p>
-              The final work is reviewed for quality, responsiveness, usability, and
-              clear next steps.
+              Тестую основний сценарій, виправляю помітні помилки та пояснюю, як
+              користуватися результатом.
             </p>
           </article>
         </div>
@@ -516,11 +476,11 @@
     <section id="contact" class="section contact">
       <div class="container contact-layout">
         <div class="contact-copy" data-reveal>
-          <p class="eyebrow">Contact</p>
-          <h2>Have a project in mind?</h2>
+          <p class="eyebrow">Контакти</p>
+          <h2>Є ідея, невелика задача або вакансія?</h2>
           <p>
-            Send a short message about your idea, channel, website, or automation need.
-            I will reply with the best next step.
+            Напишіть коротко про запит. Повідомлення з форми надсилається в Telegram,
+            тож я побачу його в групі.
           </p>
 
           <ul class="contact-list">
@@ -538,46 +498,53 @@
             <li>
               <a href="My_CV_Mykyta_Yakovenko.pdf" target="_blank" rel="noreferrer">
                 <svg class="icon"><use href="#icon-download"></use></svg>
-                Download CV
+                Завантажити CV
               </a>
             </li>
           </ul>
         </div>
 
-        <form id="contact-form" class="contact-form" data-recipient="nickiakovenko@gmail.com" data-reveal>
+        <form id="contact-form" class="contact-form" data-endpoint="/api/contact" data-reveal>
+          <div class="field field-honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
           <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required placeholder="Your name" />
+            <label for="name">Ім’я</label>
+            <input id="name" name="name" type="text" required placeholder="Ваше ім’я" autocomplete="name" />
           </div>
 
           <div class="field">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+            <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email" />
           </div>
 
           <div class="field">
-            <label for="project">Project type</label>
-            <select id="project" name="project">
-              <option value="AI music production">AI music production</option>
-              <option value="YouTube automation">YouTube automation</option>
-              <option value="Web development">Web development</option>
-              <option value="Telegram bot development">Telegram bot development</option>
-              <option value="Other digital project">Other digital project</option>
+            <label for="project">Тип запиту</label>
+            <select id="project" name="project" required>
+              <option value="" selected disabled>Оберіть варіант</option>
+              <option value="Telegram-бот">Telegram-бот</option>
+              <option value="Розпізнавання об’єктів YOLO">Розпізнавання об’єктів YOLO</option>
+              <option value="Автоматизація або аналітичні графіки">Автоматизація або аналітичні графіки</option>
+              <option value="Дуже простий сайт">Дуже простий сайт</option>
+              <option value="Зацікавила вакансія">Зацікавила вакансія</option>
+              <option value="Інше">Інше</option>
             </select>
           </div>
 
           <div class="field">
-            <label for="message">Message</label>
+            <label for="message">Повідомлення</label>
             <textarea
               id="message"
               name="message"
               required
-              placeholder="Tell me briefly about the goal, timeline, and what you want to build."
+              placeholder="Коротко опишіть задачу, бажаний результат і терміни."
             ></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary btn-full">
-            Open email draft
+            Надіслати в Telegram
             <svg class="icon"><use href="#icon-arrow-right"></use></svg>
           </button>
 
@@ -589,8 +556,8 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Mykyta Yakovenko. All rights reserved.</p>
-      <a href="#hero" data-scroll>Back to top</a>
+      <p>&copy; <span id="year"></span> Mykyta Yakovenko. Усі права захищено.</p>
+      <a href="#hero" data-scroll>На початок</a>
     </div>
   </footer>
 

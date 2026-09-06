@@ -139,41 +139,72 @@
     }
   }
 
-  function showStatus(message, isError) {
+  function showStatus(message, type) {
     if (!statusEl) return;
     statusEl.textContent = message;
-    statusEl.style.color = isError ? "#b91c1c" : "#15803d";
+    statusEl.classList.toggle("is-error", type === "error");
+    statusEl.classList.toggle("is-success", type === "success");
   }
 
   if (form) {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
       const formData = new FormData(form);
-      const recipient = form.dataset.recipient || "nickiakovenko@gmail.com";
       const name = String(formData.get("name") || "").trim();
       const email = String(formData.get("email") || "").trim();
       const project = String(formData.get("project") || "").trim();
       const message = String(formData.get("message") || "").trim();
+      const website = String(formData.get("website") || "").trim();
+      const endpoint = form.dataset.endpoint;
+      const submitButton = form.querySelector('button[type="submit"]');
 
       if (!name || !email || !message) {
-        showStatus("Please fill in your name, email, and message.", true);
+        showStatus("Будь ласка, заповніть ім’я, email і повідомлення.", "error");
         return;
       }
 
-      const subject = encodeURIComponent(`Portfolio inquiry: ${project || "New project"}`);
-      const bodyText = [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Project type: ${project || "Not specified"}`,
-        "",
-        "Message:",
-        message,
-      ].join("\n");
+      if (!endpoint) {
+        showStatus("Надсилання ще не налаштоване. Спробуйте написати на email.", "error");
+        return;
+      }
 
-      window.location.href = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
-      showStatus("Your email app is opening with a prepared message.", false);
-      form.reset();
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.setAttribute("aria-busy", "true");
+      }
+      showStatus("Надсилаю повідомлення…", "success");
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, project, message, website }),
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok || !result.ok) {
+          throw new Error("Telegram form request failed");
+        }
+
+        showStatus("Дякую! Повідомлення успішно надіслано в Telegram.", "success");
+        form.reset();
+      } catch (error) {
+        showStatus(
+          "Не вдалося надіслати повідомлення. Будь ласка, спробуйте ще раз або напишіть на email.",
+          "error"
+        );
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.removeAttribute("aria-busy");
+        }
+      }
     });
   }
 
